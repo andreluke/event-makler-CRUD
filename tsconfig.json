@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "CommonJS",
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true
+  },
+  "exclude": [
+    "node_modules",  // Exclui a pasta node_modules, padrão
+    "src/test",           // Exclui a pasta test
+    "jest.config.ts" // Exclui o arquivo jest.config.js
+  ]
+}

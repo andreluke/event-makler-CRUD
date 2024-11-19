@@ -1,0 +1,42 @@
+{
+  "name": "servidor",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "check": "tsc --noEmit && echo ✔ Ok",
+    "build": "tsc",
+    "dev": "tsx --env-file .env ./src/index.ts",
+    "dev:dev": "tsx --env-file .env.dev ./src/index.ts",
+    "watch": "tsx --watch --env-file .env ./src/index.ts",
+    "watch:dev": "tsx --watch --env-file .env.dev ./src/index.ts",
+    "start": "node --env-file .env ./build/index.js",
+    "start:dev": "node --env-file .env.dev ./build/index.js",
+    "test": "jest --verbose"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.4.0",
+    "pg": "^8.11.5"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/jest": "^29.5.14",
+    "@types/jsonwebtoken": "^9.0.6",
+    "@types/pg": "^8.11.6",
+    "@types/supertest": "^6.0.2",
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.4.5"
+  }
+}
