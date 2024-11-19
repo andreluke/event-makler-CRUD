@@ -12,6 +12,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    services:
+      mongodb:
+        image: mongo:latest
+        ports:
+          - 27017:27017
+
     steps:
     - name: Check out code
       uses: actions/checkout@v3
@@ -24,6 +30,9 @@ jobs:
     - name: Install dependencies
       run: npm install
 
+    - name: Set up .env file
+      run: echo "PORT=3030\nDB_URI=mongodb://127.0.0.1:27017/eventmakertest\nMONGO_URI_TEST=mongodb://127.0.0.1:27017/eventmakertest\nNODE_ENV=development" > .env.test
+
     - name: Build project
       run: npm run build
 
@@ -32,7 +41,7 @@ jobs:
 
     - name: Check TypeScript
       run: npm run check
-      
+
     - name: Cache Node modules
       uses: actions/cache@v3
       with:
