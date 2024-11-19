@@ -8,7 +8,12 @@ class EventController {
       const response = await Event.create({ titulo, descricao, data, local });
       res.status(201).send(response);
     } catch (e: any) {
-      res.status(400).send({ message: e.message });
+      if (e.errors) {
+        const errorMessages = Object.values(e.errors).map((err: any) => err.message);
+        res.status(400).send({ message: errorMessages.join(". ") });
+      } else {
+        res.status(400).send({ message: e.message });
+      }
     }
   }
 

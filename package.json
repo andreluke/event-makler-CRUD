@@ -9,8 +9,8 @@
     "dev:dev": "tsx --env-file .env.dev ./src/index.ts",
     "watch": "tsx --watch --env-file .env ./src/index.ts",
     "watch:dev": "tsx --watch --env-file .env.dev ./src/index.ts",
-    "start": "node --env-file .env ./build/index.js",
-    "start:dev": "node --env-file .env.dev ./build/index.js",
+    "start": "node --env-file .env ./dist/index.js",
+    "start:dev": "node --env-file .env.dev ./dist/index.js",
     "test": "jest --verbose"
   },
   "keywords": [],
@@ -23,7 +23,8 @@
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.4.0",
-    "pg": "^8.11.5"
+    "pg": "^8.11.5",
+    "tsx": "^4.19.2"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
